@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+    <script>
+        function countBs(s){
+            var c=0
+            for (var i=0;i<s.length;i++){
+                if(s.charAt(i)==='B'){
+                    c+=1;
+                }
+            }
+        return c;
+        }
+
+        function CountChar(s,c){
+            var count = 0; 
+            for (var i = 0; i < s.length; i++) {
+                if (s.charAt(i) === c)
+                count += 1;
+            }
+            return count;
+        }
+
+        console.log(countBs("aBBba"))
+        alert(CountChar("aBBbaa","a"))
+    </script>
+</head>
