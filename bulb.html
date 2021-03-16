@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head><title> </title>
+    <style>
+
+    </style>
+    <script>
+        var flag=false;
+        function myfunc() {
+            if(flag){
+                document.getElementById("switch").src="switchoff.png";
+                document.getElementById("bulb").src="bulboff.jpg";
+                flag=false;
+            }
+            else{
+                document.getElementById("switch").src="switchon.jpg";
+                document.getElementById("bulb").src="bulbon.jpg";
+                flag=true
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <img  id="switch" src="switchoff.png" onclick="myfunc()">
+    <img id="bulb" src="bulboff.jpg">
+    
+    
+</body>
