@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+</head>
+<link rel="stylesheet" href="login.css">
+<body onload="loadAns()" style="background-color: #333;">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+
+    <div class="wrapper fadeInDown">
+    <div id="formContent">
+       
+
+       
+        <div class="fadeIn first">
+            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="LOGIN" />
+        </div>
+
+       
+        <form action="Q1.html" onsubmit="form()">
+            <div class="login">
+                <input type="text"  class="fadeIn second" id="name"  name="login" placeholder="login"><br>
+                
+                <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"><br>
+                <!-- <input type="submit" class="fadeIn fourth" value="Login"> -->
+                <input id="login" type="submit"   class="fadeIn fourth" value="Login">
+            </div>
+        </form>
+
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+    </div>
+    </div>
+    <script language="javascript">
+        const name=document.getElementById("name");
+        const password=document.getElementById("password");
+        console.log(name.value);
+        
+        // localStorage.removeItem("password")
+    
+        function form(){
+            if(name){
+                localStorage.setItem("name",name.value);
+                
+                
+                // localStorage.reload();
+            }
+            
+        };
+    </script>
+</body>

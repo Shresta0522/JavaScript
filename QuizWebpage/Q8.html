@@ -18,22 +18,22 @@
     <div class="container">
         <div class="container mt-sm-5 my-1">
 
-        <form action="ScorePage.html" onsubmit="checkans()"> 
+        <form action="Q9.html" onsubmit="checkans()"> 
             <div class="question ml-sm-5 pl-sm-5 pt-2">
                 <div class="py-2 h5">
-                    <b>Q. which option best describes your job role?</b>
+                    <b>Q8. What are female elephants called?</b>
                 </div>
                 <br>
                 
                 <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> 
                     
-                    <label class="options">Option1<input type="radio" id="ans1"  name="q1"  value="Option1"> 
+                    <label class="options">Mares<input type="radio" id="ans1"  name="q1"  value="Mares"> 
                         <span class="checkmark"></span> </label> <br>
-                    <label class="options">Option2 <input type="radio"id="ans2"  name="q1"  value="Option2"> 
+                    <label class="options">Sows <input type="radio"id="ans2"  name="q1"  value="Sows"> 
                         <span class="checkmark"></span> </label> <br>
-                    <label class="options">Option3<input type="radio" id="ans3"  name="q1"  value="Option3"> 
+                    <label class="options">Cows<input type="radio" id="ans3"  name="q1"  value="Cows"> 
                         <span class="checkmark"></span> </label> <br>
-                    <label class="options">Option4<input type="radio" id="ans4"  name="q1"  value="Option4"> 
+                    <label class="options">Dams<input type="radio" id="ans4"  name="q1"  value="Dams"> 
                         <span class="checkmark"></span> </label> <br>
                 </div>
             </div>
@@ -46,10 +46,10 @@
         </div>
     </div>
     <script>
-        var ans="Option2";
+        var ans="Cows";
         //loadfun
         function loadans(){
-            localStorage.setItem("question1",ans)
+            localStorage.setItem("question8",ans)
         }
 
         var point=0
@@ -74,7 +74,7 @@
             
              var score=parseInt(localStorage.getItem("score"));
             var givenans=data()
-            localStorage.setItem("givenans1",givenans)
+            localStorage.setItem("YourAnswer8",givenans)
             if(ans==givenans){
                 score++;
                 score=score.toString();

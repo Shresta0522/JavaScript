@@ -24,86 +24,113 @@
 </head>
 
 
-<body onload="loadAns()">
+<body onload="loadAns()" style="background-color: #333;">
     <div id="deatils-block " >
-        <p><h4>Name :
-        <h5 id="naam"><script> document.getElementById("naam").innerHTML=localStorage.getItem("name");
-        </script></h4> </h5><br>
-        </p>
-        <p><h4>Score :
-            <h5 id="score"><script> document.getElementById("score").innerHTML=localStorage.getItem("score");
-            </script></h4> </h5>
-        </p>
-        <table class="table table-hover">
+
+        <DIV ID="scorecrad" style="margin: 5%;background-color: aliceblue;">
+            <table class="table table-sm-hover ">
+                
+                
+                <tbody>
+                  <tr class="bg-info">
+                
+                    <td>Name</td>
+                    <td id="YourName"><script> document.getElementById("YourName").innerHTML=localStorage.getItem("name");
+                    </script></td>
+                    
+                  </tr>
+                  <tr class="bg-info">
+                   
+                    <td>YourScore</td>
+                    <td id="score"><script> document.getElementById("score").innerHTML=localStorage.getItem("score");
+                    </script></td>
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </DIV>
+        <table class="table table-hover" style="background-color:aliceblue;">
             <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Question</th>
                 <th scope="col">Correct Answer</th>
                 <th scope="col">Marked Answer</th>
-            </tr>
+            </tr class="bg-info">
             </thead>
             <tbody>
-            <tr>
+            <tr >
                 <th scope="row">1</th>
                 <td>Question1</td>
-                <td >Option3</td>
+                <td id="opt">fish</td>
 
-                <td id="q1"><script> document.getElementById("q1").innerHTML=localStorage.getItem("givenans");
+                <td id="q1"><script> document.getElementById("q1").innerHTML=localStorage.getItem("yourAnswer1");
                 </script></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question2</td>
+                <td id="opt2">chihuahua</td>
+
+                <td id="q2"><script> document.getElementById("q2").innerHTML=localStorage.getItem("YourAnswer2");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>Question3</td>
+                <td id="opt3">black base with white stripes.</td>
+                <td id="q3"><script> document.getElementById("q3").innerHTML=localStorage.getItem("YourAnswer3");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question4</td>
+                <td id="opt4"> Albatross</td>
+                <td id="q4"><script> document.getElementById("q4").innerHTML=localStorage.getItem("YourAnswer4");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">5</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question5</td>
+                <td id="opt5">blue whale</td>
+                <td id="q5"><script> document.getElementById("q5").innerHTML=localStorage.getItem("YourAnswer5");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">6</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question6</td>
+                <td id="opt6">Cats</td>
+                <td id="q6"><script> document.getElementById("q6").innerHTML=localStorage.getItem("YourAnswer6");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">7</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question7</td>
+                <td id="opt7">Ocean quahog (clam)</td>
+                <td id="q7"><script> document.getElementById("q7").innerHTML=localStorage.getItem("YourAnswer7");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">8</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question8</td>
+                <td id="opt8">Cows</td>
+                <td id="q8"><script> document.getElementById("q8").innerHTML=localStorage.getItem("YourAnswer8");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">9</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question9</td>
+                <td id="opt9">Flamingos</td>
+                <td id="q9"><script> document.getElementById("q9").innerHTML=localStorage.getItem("YourAnswer9");
+                </script></td>
             </tr>
             <tr>
                 <th scope="row">10</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Question10</td>
+                <td id="opt10">Sailfish</td>
+                <td id="q10" styel="tex"><script> document.getElementById("q10").innerHTML=localStorage.getItem("YourAnswer10");
+                </script></td>
             </tr>
 
             </tbody>
