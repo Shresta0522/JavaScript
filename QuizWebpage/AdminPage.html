@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+    <style>
+        #details-block{
+            margin: 10%;
+            border: 1px solid;
+            text-align: center;
+            padding-bottom: 5%;
+        }
+
+        /* .login{
+            padding: 30%;
+            text-align: center;
+            border: 1px solid;
+
+        } */
+        
+    </style>
+</head>
+
+
+<body>
+    
+    <form id="details-block">
+        <div class="login">
+            <h2 style="text-align: center ;">Login</h2>
+            <input id="name" type="text" placeholder="username"  ><br>
+            <input id="pwd" type="password" placeholder="password"  ><br>
+            <input id="idno" type="text" placeholder="id-no"  ><br>
+            <a href="Q1.html"><input id="login"type="button" value="Login"> </a><br>
+        </div>
+    </form>
+    <script language="javascript">
+        const name=document.getElementById("name");
+        const password=document.getElementById("pwd");
+        const id=document.getElementById("idno");
+        
+        // localStorage.removeItem("password")
+
+        login.onclick =function(){
+            if(name  && id ){
+                localStorage.setItem("name",name.value);
+                localStorage.setItem("idno",id.value);
+                
+                // localStorage.reload();
+            }
+            
+        };
+
+    </script>
+
+</body>

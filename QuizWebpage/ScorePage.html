@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>
+
+    </title>
+    <style>
+        #details-block{
+            margin: 10%;
+            border: 1px solid;
+            text-align: center;
+            padding-bottom: 5%;
+        }
+
+        /* .login{
+            padding: 30%;
+            text-align: center;
+            border: 1px solid;
+
+        } */
+        
+    </style>
+    <script href="bootstrap/4.6.0-dist/css/bootstrap.css" rel="stylesheet"></script>
+</head>
+
+
+<body onload="loadAns()">
+    <div id="deatils-block " >
+        <p><h4>Name :
+        <h5 id="naam"><script> document.getElementById("naam").innerHTML=localStorage.getItem("name");
+        </script></h4> </h5><br>
+        </p>
+        <p><h4>Score :
+            <h5 id="score"><script> document.getElementById("score").innerHTML=localStorage.getItem("score");
+            </script></h4> </h5>
+        </p>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Question</th>
+                <th scope="col">Correct Answer</th>
+                <th scope="col">Marked Answer</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Question1</td>
+                <td >Option3</td>
+
+                <td id="q1"><script> document.getElementById("q1").innerHTML=localStorage.getItem("givenans");
+                </script></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    
+
+  <script>
+
+  </script>
+
+
+</body>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+    <style>
+        .Question{
+            margin: 10%;
+            border: 1px solid;
+        }
+        .content{
+            text-align:center
+            coding
+        }
+       
+    </style>
+</head>
+<body onload="loadAns()">
+    <div class="Question">
+        <div class="content">
+            
+            <form action="ScorePage.html" onsubmit="checkans()"> 
+                <h2 >Q1:</h2>
+                
+                <input type="radio" id="ans1"  name="q1"  value="Option1" > <label> Option1</label><br>
+                <input type="radio" id="ans2" name="q1"  value="Option2"><label> Option2</label><br>
+                <input type="radio" id="ans3"  name="q1"  value="Option3"><label> Option3</label><br>
+                <input type="radio" id="ans4" name="q1" value="Option4"><label> Option4</label><br>
+                <input type="submit" name="submit">
+            </form>
+            
+
+
+
+        </div>
+            
+
+    </div>
+
+    <script>
+        var ans="Option2";
+        //loadfun
+        function loadans(){
+            localStorage.setItem("question2",ans)
+        }
+
+        var point=0
+        
+        function data()
+        {
+            var radios = document.getElementsByName("q1"); // list of radio buttons
+            // var val = localStorage.getItem('q1'); // local storage value
+
+            for(var i=0;i<radios.length;i++){
+                var opt=radios[i].value;
+                // console.log(opt)
+                if(radios[i].checked){
+                    console.log(radios[i].value)
+                    return radios[i].value
+                }
+            }
+        }
+        
+        function checkans(){
+            // var score=0;
+            
+             var score=parseInt(localStorage.getItem("score"));
+            var givenans=data()
+            localStorage.setItem("givenans2",givenans)
+            if(ans==givenans){
+                score++;
+                score=score.toString();
+                localStorage.setItem("score",score)
+
+            }
+
+        }
+            
+    </script>
+</body>

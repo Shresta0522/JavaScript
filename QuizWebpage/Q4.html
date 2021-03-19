@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+
+    </title>
+    <style>
+        .container{
+           padding:20%;
+           margin:10%;
+           margin-left:26%;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="Quiz.css">
+
+<body onload="loadAns()">
+    <div class="container">
+        <div class="container mt-sm-5 my-1">
+
+        <form action="ScorePage.html" onsubmit="checkans()"> 
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                <div class="py-2 h5">
+                    <b>Q. which option best describes your job role?</b>
+                </div>
+                <br>
+                
+                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"> 
+                    
+                    <label class="options">Option1<input type="radio" id="ans1"  name="q1"  value="Option1"> 
+                        <span class="checkmark"></span> </label> <br>
+                    <label class="options">Option2 <input type="radio"id="ans2"  name="q1"  value="Option2"> 
+                        <span class="checkmark"></span> </label> <br>
+                    <label class="options">Option3<input type="radio" id="ans3"  name="q1"  value="Option3"> 
+                        <span class="checkmark"></span> </label> <br>
+                    <label class="options">Option4<input type="radio" id="ans4"  name="q1"  value="Option4"> 
+                        <span class="checkmark"></span> </label> <br>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex align-items-center pt-3">
+                <input class="btn btn-success" type="submit" name="submit"> 
+            </div>
+        </form>
+
+        </div>
+    </div>
+    <script>
+        var ans="Option2";
+        //loadfun
+        function loadans(){
+            localStorage.setItem("question1",ans)
+        }
+
+        var point=0
+        
+        function data()
+        {
+            var radios = document.getElementsByName("q1"); // list of radio buttons
+            // var val = localStorage.getItem('q1'); // local storage value
+
+            for(var i=0;i<radios.length;i++){
+                var opt=radios[i].value;
+                // console.log(opt)
+                if(radios[i].checked){
+                    console.log(radios[i].value)
+                    return radios[i].value
+                }
+            }
+        }
+        
+        function checkans(){
+            // var score=0;
+            
+             var score=parseInt(localStorage.getItem("score"));
+            var givenans=data()
+            localStorage.setItem("givenans1",givenans)
+            if(ans==givenans){
+                score++;
+                score=score.toString();
+                localStorage.setItem("score",score)
+
+            }
+
+        }
+            
+    </script>
+</body>
