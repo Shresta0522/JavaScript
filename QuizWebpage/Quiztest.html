@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+
+    </title>
+    <style>
+        .container{
+           padding:20%;
+           margin:10%;
+           margin-left:26%;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="Quiz.css">
+
+<body >
+    <div id="heading"><h1 style="text-align: center; color:honeydew;">Quiz</h1></div>
+
+    
+    <div class="container">
+        <div id="count" style="font-size: 120%;color: white; text-align: right;">Timer</div><br>
+            <form id="data1" name="data1 ">
+            </form>
+            <input id="q" onclick="loadDoc()"type="button" value="Start Quiz" style="margin:3%;">
+        
+            <div id = "after_submit">
+        
+                <p id = "message"></p>
+                <p id = "number_correct"></p>
+        
+            </div>
+        
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        function choose(){
+            var score=0;
+            var l=localStorage.getItem("datalength");
+
+            for (var i=0;i<l;i++){
+                n=i+1
+                var answerno="correctanswer"+n
+                var questionno = "ans" + i;
+		
+		        var ans = localStorage.getItem(answerno);
+                // alert(questionno)
+                var radios=document.getElementsByName(questionno);
+                // alert(radios.length)
+                for(var j=0;j<radios.length;j++){
+                    // alert(radios[j].value)
+                    if (radios[j].checked)
+                        // alert(radios[j].value)
+                        var youropt=radios[j].value
+                        localStorage.setItem("youropt"+n,youropt)
+
+                }
+                if(youropt==ans)
+                    score++;   
+            }
+            // console.log()
+            document.getElementById("after_submit").style.visibility = "visible";
+            document.getElementById("button").style.visibility = "hidden";
+            
+            document.getElementById("message").innerHTML ="Congratulation :";
+	        document.getElementById("number_correct").innerHTML = "You got " + score + " correct.";
+
+        }
+    
+        function loadDoc() 
+        {
+            var str = "";
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "test.json", true);
+            xhr.responseType = 'json';
+            xhr.onload = function()
+            {
+                var status = xhr.status;
+                if (status === 200) 
+                { 
+                    var datalength=xhr.response.length;
+                    var length=datalength.toString();
+                    localStorage.setItem("datalength",length);
+                    for(i=0;i<xhr.response.length;i++)
+                    {
+                        var n=i+1;
+                        var answerlist =xhr.response[i]["answer"]
+                        localStorage.setItem("correctanswer"+n,answerlist)
+
+                        str += "<div id='q" + i + "'><p id='id" + i + "'>" + n +":"+ xhr.response[i][i+1] + "</p>" + 
+                                "<input type='radio'  name='ans"+i+"'+  id='ans" + i + "' value='" + xhr.response[i]["a"] + "'>" +"<label>" + xhr.response[i]["a"] + "</label><br>" + 
+                                "<input type='radio'  name='ans"+i+"' id='ans" + i + "' value='" + xhr.response[i]["b"] + "'>" +"<label>" + xhr.response[i]["b"] + "</label><br>" + 
+                                "<input type='radio'  name='ans"+i+"' id='ans" + i + "' value='" + xhr.response[i]["c"] + "'>" +"<label>" + xhr.response[i]["c"] + "</label><br>" + 
+                                "<input type='radio'  name='ans"+i+"' id='ans" + i + "' value='" + xhr.response[i]["d"] + "'>" +"<label>" + xhr.response[i]["d"] + "</label><br>" + 
+                                "</div><br>"
+                    }
+                    str += '<input id = "button" type = "button" value = "Submit" onclick = "choose();">';
+                    
+                    document.getElementById("data1").innerHTML =str;
+
+                    document.getElementById("q").style.visibility = "hidden";
+                    countdown()
+                }
+                else{
+                    console.log("Error in response")
+                }
+            };
+            xhr.send();
+            
+        }
+    
+        function countdown(){
+        var count = 20;
+        var interval = setInterval(function(){
+            document.getElementById('count').innerHTML= "Time Left: " + count;
+            count--;
+            if (count === 0){
+                choose()
+                clearInterval(interval);
+                document.getElementById('count').innerHTML='Done';
+                // or...
+                alert("You're out of time!");
+		    }
+        }, 1000);
+        }
+         // var na="ans"+i
+                                // var radios = document.getElementsByName(na);
+                                // console.log(radios);
+                                // for(var j=0;j<radios.length;j++){
+                                //     var opt=radios[j].value;
+                                //     // alert(opt);
+                                //     if(radios[j].checked){
+                                //         console.log(radios[j].value)
+                                //         var opt=radios[j].value;
+                                //         var questn="question"+i
+                                //         consol.log(opt);
+                                //         localStorage.setItem(questn,opt)
+                            
+                            
+                            //    st="<input type='submit'value='submit'>"   
+                            //    document.getElementById("data1").innerHTML = st;  
+        </script>
+</body>
