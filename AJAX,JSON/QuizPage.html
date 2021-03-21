@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function loadDoc() {
+            var myarr;
+  			var myRequest = new XMLHttpRequest();
+  			myRequest.onreadystatechange = function() {
+    			if (this.readyState == 4 && this.status == 200) {
+                    // 
+                    // 
+     				document.getElementById("demo").innerHTML = this.responseText;
+                    myarr=JSON.parse(this.responseText);
+                    console.log(myarr[1]);
+    			}
+  			};
+  			myRequest.open("GET", "Questions.json",true);
+            myRequest.onload =function(){
+                // console.log(myRequest.responseText);
+                var data=JSON.parse(myRequest.responseText);
+                console.log(data);
+            }
+  			myRequest.send();
+		}
+
+        
+
+
+	</script>
+</head>
+<body>
+	<p id="demo"></p>
+	<button onclick="loadDoc()">Click Me!!!</button>
+</body>
+</html>
